@@ -1,0 +1,32 @@
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Edit</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <%products.forEach(tag=>{%>
+                    <tr>
+                        <th scope="row"><%=tag.id%></th>
+                        <td><%=tag.name%></td>
+                        <td><%=tag.desc%></td>
+                        <td scope="col"><%=tag.price%></td>
+                        <td>
+                            <img src="<%= tag.imageUrl %>" alt="<%= tag.name %>" style="max-width: 100px;">
+                        </td>
+                        <td>        
+                            <a href="/update-data/<%=tag.id%>"class="btn btn-warning">UPDATE</a>
+                            <button class="btn btn-danger" onclick="deleteProduct('<%= tag.id %>')">Delete</button>
+                            <!-- <a href="/update-delete/<%=tag.id%>" method:post class="btn btn-warning">DELETE</a> -->
+                        </td>
+                    </tr>
+                <%})%> 
+            </tbody>
+        </table>
+   
