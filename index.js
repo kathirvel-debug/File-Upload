@@ -22,7 +22,7 @@ server.get('/addNewproduct',(productController.formrender))
 server.post('/data',upload.single('imageUrl'),validationRequest,(productController.formsfill))
 server.get('/update-data/:id',(productController.update))
 server.post('/update-list',upload.single('imageUrl'),(productController.updateNewdata))
-server.post('/update-delete/:id',(productController.deleteProduct))
+// server.post('/update-delete/:id',(productController.deleteProduct))
 const userControllers=new userController();
 server.get('/login',(userControllers.loginPage));
 server.get('/register',(userControllers.registerPage));
